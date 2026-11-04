@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 final class ArrivalGeofences {
     static final int RADIUS_METRES = 200;
-    static final int DWELL_MILLIS = 5 * 60 * 1000;
+    static final int DWELL_MILLIS = 1 * 60 * 1000;
     private static final String PREFS = "arrival-reminders";
     private ArrivalGeofences() {}
 
@@ -50,7 +50,7 @@ final class ArrivalGeofences {
             .setCircularRegion(latitude, longitude, RADIUS_METRES)
             .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL)
             .setLoiteringDelay(DWELL_MILLIS)
-            .setNotificationResponsiveness(5 * 60 * 1000)
+            .setNotificationResponsiveness(DWELL_MILLIS)
             .setExpirationDuration(Geofence.NEVER_EXPIRE).build();
     }
 
